@@ -1,0 +1,2 @@
+1. Find the average sell and buy price by gold type (PNJ,SJC)
+2. Find the max and min rate by gold type
