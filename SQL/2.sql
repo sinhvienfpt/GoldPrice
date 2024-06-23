@@ -1,6 +1,8 @@
---find the highest and lowest rate 
-SELECT MAX(rate) AS highest_rate, MIN(rate) AS lowest_rate
+-- find the highest sell price and update time
+SELECT update_time,type, sell AS highest_sell
 FROM tbl_PNJ
-UNION 
-SELECT MAX(rate) AS highest_rate, MIN(rate) AS lowest_rate
+WHERE sell = (SELECT MAX(sell) FROM tbl_PNJ)
+UNION
+SELECT update_time,type, sell AS highest_sell
 FROM tbl_SJC
+WHERE sell = (SELECT MAX(sell) FROM tbl_SJC)
