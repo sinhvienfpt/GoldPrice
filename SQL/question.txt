@@ -1,3 +1,8 @@
 1. Find the average sell and buy price by gold type (PNJ,SJC)
 2. Find the highest sell price and update time
 2. Find the highest rate and update time
+4. Calculate the difference between the selling price and the buying 
+price for each type and find the average difference over the entire period.
+5. What are the 5 days with the highest volatility for both PNJ and SJC?
+6. What is the trend in purchase prices over time for each category? Are they increasing, decreasing or stable?
+7. Compare the difference in selling price between PNJ and SJC
