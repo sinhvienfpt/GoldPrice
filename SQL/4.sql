@@ -1,10 +1,9 @@
--- find the lowest rate and update time
-    SELECT update_time, type, rate AS highest_rate
-    FROM tbl_PNJ
-    WHERE rate = (SELECT MIN(rate)
-    FROM tbl_PNJ)
-UNION
-    SELECT update_time, type, rate AS highest_rate
-    FROM tbl_SJC
-    WHERE rate = (SELECT MIN(rate)
-    FROM tbl_SJC)
+ --4-- Calculate the difference between the selling price and the buying price for each type and find the average difference over the entire period.
+
+SELECT type, AVG(sell - buy) AS average_price_difference
+FROM (
+    SELECT 'PNJ' AS type, sell, buy FROM tbl_PNJ
+    UNION ALL
+    SELECT 'SJC' AS type, sell, buy FROM tbl_SJC
+) AS combined
+GROUP BY type;
